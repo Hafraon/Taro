@@ -18,7 +18,7 @@
             background-color: #030E20;
             color: #E9C987;
             line-height: 1.6;
-            background-image: url('images/night-sky-background.jpg');
+            background-image: url('https://i.ibb.co/8jzgHSn/night-sky-background.jpg');
             background-size: cover;
             background-attachment: fixed;
         }
@@ -102,10 +102,8 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            background-image: url('images/night-sky-moon.jpg');
-            background-size: cover;
-            background-position: center;
-            border-bottom: 2px solid #E9C98755;
+            padding: 50px 0;
+            margin-bottom: 50px;
         }
 
         .hero::before {
@@ -115,8 +113,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(3, 14, 32, 0.7);
-            z-index: 0;
+            background: url('https://i.ibb.co/VHB9tbF/night-sky-moon.jpg') center/cover no-repeat;
+            z-index: -1;
+            filter: brightness(0.7);
         }
 
         .ornamental-border {
@@ -127,9 +126,8 @@
             height: 100%;
             z-index: 1;
             pointer-events: none;
-            background-image: url('images/ornamental-border.png');
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
+            border: 50px solid transparent;
+            border-image: url('https://i.ibb.co/gd8Q9xG/ornamental-border.png') 100 round;
         }
 
         .hero .container {
@@ -159,9 +157,52 @@
             opacity: 0.8;
         }
 
+        .book-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto 80px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .book-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .candle-left {
+            position: absolute;
+            left: 30px;
+            bottom: 0;
+            width: 120px;
+            height: auto;
+            z-index: 2;
+        }
+
+        .candle-right {
+            position: absolute;
+            right: 30px;
+            bottom: 0;
+            width: 120px;
+            height: auto;
+            z-index: 2;
+        }
+
         .services {
             padding: 80px 0;
             background-color: rgba(3, 14, 32, 0.7);
+            position: relative;
+            z-index: 3;
+        }
+
+        .services-title {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-bottom: 50px;
+            font-family: 'Tangerine', cursive;
         }
 
         .services-container {
@@ -191,7 +232,7 @@
         }
 
         .divider {
-            padding: 80px 0;
+            padding: 60px 0;
             text-align: center;
             background-color: rgba(3, 14, 32, 0.9);
         }
@@ -207,6 +248,7 @@
             justify-content: space-between;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 20px;
         }
 
         .guarantee-section {
@@ -217,6 +259,22 @@
             border: 1px solid #E9C98755;
             margin: 10px;
             border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guarantee-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.ibb.co/gd8Q9xG/ornamental-border.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            opacity: 0.2;
+            z-index: -1;
         }
 
         .guarantee-section h3 {
@@ -228,18 +286,21 @@
         .guarantee-section p {
             font-size: 0.9rem;
             color: #E9C987CC;
+            margin-bottom: 15px;
         }
 
         .candle-image {
             width: 100%;
+            max-width: 300px;
             height: auto;
-            margin-bottom: 20px;
+            margin: 0 auto 20px;
         }
 
         .bullet-list {
             text-align: left;
             list-style-type: none;
             padding-left: 20px;
+            margin-bottom: 20px;
         }
 
         .bullet-list li {
@@ -283,30 +344,6 @@
             color: #E9C98788;
         }
 
-        /* Стилі для декоративних елементів */
-        .decorative-book {
-            position: relative;
-            margin: 60px auto;
-            max-width: 800px;
-        }
-
-        .book-image {
-            width: 100%;
-            height: auto;
-        }
-
-        .candles {
-            display: flex;
-            justify-content: space-between;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .candle-left, .candle-right {
-            width: 150px;
-            height: auto;
-        }
-
         @media screen and (max-width: 768px) {
             .hero h1 {
                 font-size: 3rem;
@@ -329,6 +366,10 @@
             .nav-links {
                 display: none;
             }
+
+            .candle-left, .candle-right {
+                width: 80px;
+            }
         }
     </style>
 </head>
@@ -339,10 +380,10 @@
                 <a href="#" class="logo">Tarot</a>
                 <ul class="nav-links">
                     <li><a href="#post">POST</a></li>
-                    <li><a href="#obss">Ø OBSS</a></li>
+                    <li><a href="#obss">6 OBSS</a></li>
                     <li><a href="#service">SERVICE</a></li>
                     <li><a href="#ficting">FICTING</a></li>
-                    <li><a href="#" class="btn">Reaģanond</a></li>
+                    <li><a href="#" class="btn">Reağanond</a></li>
                 </ul>
             </nav>
         </div>
@@ -352,20 +393,22 @@
         <div class="ornamental-border"></div>
         <div class="container">
             <h1>Tarot Mystcal Werz.</h1>
-            <p>Enghts with cauch nak clse trendingë.</p>
+            <p>enghts with cauch nak clse trendingë.</p>
             <p class="subtext">Later the setur pefelit eant yoʊ ire voor to brviead opproless and euse panceles neenries.</p>
             <a href="#" class="btn">Quieries</a>
         </div>
     </section>
 
-    <div class="decorative-book">
-        <img src="images/open-book.png" alt="Відкрита книга" class="book-image">
+    <div class="book-container">
+        <img src="https://i.ibb.co/NCt93K8/open-book.png" alt="Відкрита книга з свічками" class="book-image">
+        <img src="https://i.ibb.co/Ry5T2Js/candle.png" alt="Свічка зліва" class="candle-left">
+        <img src="https://i.ibb.co/Ry5T2Js/candle.png" alt="Свічка справа" class="candle-right">
     </div>
 
     <section class="services">
         <div class="services-container">
             <div class="service-section">
-                <h3>Anton cAteats</h3>
+                <h3>Apton cAteats</h3>
                 <p>Coettisungt uit vehlcorte mgt all intouf detatpirad mamy hoaftatien fieen fitraça Me ecafitarct ewing ereocwit a bocter ank indficate ues prevviriese.</p>
             </div>
             <div class="service-section">
@@ -396,7 +439,7 @@
             <a href="#" class="btn-outline">ORDET FTRES</a>
         </div>
         <div class="guarantee-section">
-            <img src="images/candle.png" alt="Свічка" class="candle-image">
+            <img src="https://i.ibb.co/Ry5T2Js/candle.png" alt="Свічка" class="candle-image">
             <h3>Livens</h3>
             <p>Hatio Jaye</p>
         </div>
@@ -413,13 +456,5 @@
             <p>© 2025 Tarot Mystcal. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        // Скрипт для завантаження зображень
-        document.addEventListener('DOMContentLoaded', function() {
-            // Можна додати анімацію чи інші візуальні ефекти
-            console.log('Сайт Tarot завантажено');
-        });
-    </script>
 </body>
 </html>
