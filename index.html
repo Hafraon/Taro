@@ -1,731 +1,375 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Містична Таро - Відкрийте таємниці своєї долі</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
-
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Playfair Display', serif;
-}
-
-body {
-background-color: #030E20;
-color: #E9C987;
-line-height: 1.6;
-/* Ось тут потрібно використати завантажене зображення як фон всього сайту */
-            background-image: url('Images/tarot-background.jpg.jpg'); /* Замініть на правильний шлях до збереженого зображення */
-            background-image: url('images/tarot-background.jpg.jpg'); /* Замініть на правильний шлях до збереженого зображення */
-background-size: cover;
-background-attachment: fixed;
-position: relative;
-}
-
-body::before {
-content: "";
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-color: rgba(3, 14, 32, 0.85);
-z-index: -1;
-}
-
-.container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 20px;
-}
-
-header {
-padding: 20px 0;
-border-bottom: 1px solid #E9C98755;
-}
-
-nav {
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-
-.logo {
-font-size: 2.5rem;
-font-weight: bold;
-color: #E9C987;
-text-decoration: none;
-font-family: 'Cinzel', serif;
-}
-
-.nav-links {
-display: flex;
-list-style: none;
-}
-
-.nav-links li {
-margin-left: 30px;
-}
-
-.nav-links a {
-color: #E9C987;
-text-decoration: none;
-transition: all 0.3s ease;
-font-size: 1.1rem;
-}
-
-.nav-links a:hover {
-color: #FFF;
-text-shadow: 0 0 10px #E9C987;
-}
-
-.btn {
-background-color: #E9C987;
-color: #030E20;
-padding: 12px 25px;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-font-size: 1.1rem;
-transition: all 0.3s ease;
-font-weight: bold;
-display: inline-block;
-text-decoration: none;
-}
-
-.btn:hover {
-background-color: #FFF;
-transform: translateY(-3px);
-box-shadow: 0 5px 15px rgba(233, 201, 135, 0.4);
-}
-
-.hero {
-height: 90vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-text-align: center;
-position: relative;
-overflow: hidden;
-/* Тут також можна використати завантажене зображення для фону секції героя */
-background-image: url('path/to/your/tarot-background.jpg'); /* Замініть на правильний шлях */
-background-size: cover;
-background-position: center;
-}
-
-.hero::before {
-content: "";
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-color: rgba(3, 14, 32, 0.7); /* Затемнення для кращої видимості тексту */
-z-index: 0;
-}
-
-.hero .container {
-position: relative;
-z-index: 1;
-}
-
-.hero h1 {
-font-size: 4rem;
-margin-bottom: 20px;
-text-shadow: 0 0 10px rgba(233, 201, 135, 0.5);
-color: #E9C987;
-font-family: 'Cinzel', serif;
-}
-
-.hero p {
-font-size: 1.5rem;
-margin-bottom: 40px;
-max-width: 700px;
-color: #E9C987CC;
-}
-
-.ornament {
-position: absolute;
-width: 300px;
-height: 300px;
-opacity: 0.2;
-z-index: 0;
-}
-
-.ornament-1 {
-top: -50px;
-left: -50px;
-transform: rotate(45deg);
-}
-
-.ornament-2 {
-bottom: -50px;
-right: -50px;
-transform: rotate(225deg);
-}
-
-.services {
-padding: 80px 0;
-}
-
-.section-title {
-text-align: center;
-font-size: 2.5rem;
-margin-bottom: 50px;
-position: relative;
-font-family: 'Cinzel', serif;
-}
-
-.section-title::after {
-content: "";
-position: absolute;
-bottom: -15px;
-left: 50%;
-transform: translateX(-50%);
-width: 150px;
-height: 3px;
-background: linear-gradient(90deg, transparent, #E9C987, transparent);
-}
-
-.services-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 40px;
-}
-
-.service-card {
-background: rgba(3, 14, 32, 0.7);
-border: 1px solid #E9C98755;
-padding: 30px;
-text-align: center;
-transition: all 0.3s ease;
-position: relative;
-overflow: hidden;
-border-radius: 5px;
-}
-
-.service-card::before {
-content: "";
-position: absolute;
-top: -10px;
-left: -10px;
-width: 50px;
-height: 50px;
-background-image: url('path/to/ornament.png'); /* Можна використати елемент декору з основного зображення */
-background-size: contain;
-background-repeat: no-repeat;
-opacity: 0.3;
-transform: rotate(45deg);
-}
-
-.service-card:hover {
-transform: translateY(-10px);
-box-shadow: 0 10px 30px rgba(233, 201, 135, 0.2);
-}
-
-.service-card h3 {
-font-size: 1.8rem;
-margin-bottom: 20px;
-color: #E9C987;
-}
-
-.service-card p {
-font-size: 1rem;
-margin-bottom: 25px;
-color: #E9C987CC;
-}
-
-.testimonials {
-padding: 80px 0;
-background: rgba(3, 14, 32, 0.5);
-}
-
-.testimonial-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 30px;
-}
-
-.testimonial-card {
-background: rgba(233, 201, 135, 0.1);
-padding: 30px;
-border-radius: 5px;
-position: relative;
-}
-
-.testimonial-card::before {
-content: """;
-           position: absolute;
-           top: 10px;
-           left: 10px;
-           font-size: 5rem;
-           color: rgba(233, 201, 135, 0.2);
-           font-family: serif;
-       }
-
-       .testimonial-text {
-           margin-bottom: 20px;
-           font-style: italic;
-       }
-
-       .testimonial-author {
-           font-weight: bold;
-           text-align: right;
-       }
-
-       .about {
-           padding: 80px 0;
-           display: grid;
-           grid-template-columns: 1fr 1fr;
-           gap: 50px;
-           align-items: center;
-       }
-
-       .about-img {
-           border-radius: 10px;
-           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-           position: relative;
-           overflow: hidden;
-       }
-
-       .about-img img {
-           width: 100%;
-           height: auto;
-           display: block;
-       }
-
-       .about-content h2 {
-           font-size: 2.5rem;
-           margin-bottom: 20px;
-           font-family: 'Cinzel', serif;
-       }
-
-       .about-content p {
-           margin-bottom: 20px;
-           font-size: 1.1rem;
-       }
-
-       .cta {
-           padding: 100px 0;
-           text-align: center;
-           background: rgba(3, 14, 32, 0.7);
-           position: relative;
-           overflow: hidden;
-       }
-
-       .cta::before {
-           content: "";
-           position: absolute;
-           top: 0;
-           left: 0;
-           width: 100%;
-           height: 100%;
-           background-image: url('path/to/your/tarot-background.jpg'); /* Замініть на правильний шлях */
-           background-size: cover;
-           opacity: 0.1;
-           z-index: -1;
-       }
-
-       .cta h2 {
-           font-size: 3rem;
-           margin-bottom: 30px;
-           font-family: 'Cinzel', serif;
-       }
-
-       .cta p {
-           font-size: 1.3rem;
-           margin-bottom: 40px;
-           max-width: 700px;
-           margin-left: auto;
-           margin-right: auto;
-       }
-
-       .btn-large {
-           padding: 15px 40px;
-           font-size: 1.3rem;
-       }
-
-       .features {
-           padding: 80px 0;
-       }
-
-       .features-grid {
-           display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-           gap: 30px;
-       }
-
-       .feature-card {
-           text-align: center;
-           padding: 20px;
-       }
-
-       .feature-icon {
-           width: 80px;
-           height: 80px;
-           background-color: rgba(233, 201, 135, 0.1);
-           border-radius: 50%;
-           margin: 0 auto 20px;
-           display: flex;
-           justify-content: center;
-           align-items: center;
-           font-size: 2rem;
-       }
-
-       .feature-card h3 {
-           font-size: 1.5rem;
-           margin-bottom: 15px;
-       }
-
-       footer {
-           padding: 50px 0;
-           background-color: rgba(0, 0, 0, 0.3);
-           border-top: 1px solid #E9C98755;
-       }
-
-       .footer-content {
-           display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-           gap: 40px;
-       }
-
-       .footer-column h3 {
-           font-size: 1.5rem;
-           margin-bottom: 20px;
-           position: relative;
-           padding-bottom: 10px;
-       }
-
-       .footer-column h3::after {
-           content: "";
-position: absolute;
-bottom: 0;
-left: 0;
-width: 50px;
-height: 2px;
-background-color: #E9C987;
-}
-
-.footer-column ul {
-list-style: none;
-}
-
-.footer-column ul li {
-margin-bottom: 10px;
-}
-
-.footer-column a {
-color: #E9C987CC;
-text-decoration: none;
-transition: all 0.3s ease;
-}
-
-.footer-column a:hover {
-color: #E9C987;
-padding-left: 5px;
-}
-
-.copyright {
-text-align: center;
-padding-top: 50px;
-color: #E9C987AA;
-font-size: 0.9rem;
-}
-
-.modal {
-display: none;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-color: rgba(0, 0, 0, 0.8);
-z-index: 1000;
-justify-content: center;
-align-items: center;
-}
-
-.modal-content {
-background-color: #030E20;
-padding: 40px;
-border-radius: 10px;
-max-width: 500px;
-width: 100%;
-position: relative;
-border: 1px solid #E9C98755;
-}
-
-.close-modal {
-position: absolute;
-top: 10px;
-right: 15px;
-font-size: 1.5rem;
-cursor: pointer;
-color: #E9C987;
-}
-
-.form-group {
-margin-bottom: 20px;
-}
-
-label {
-display: block;
-margin-bottom: 8px;
-font-weight: bold;
-}
-
-input, textarea, select {
-width: 100%;
-padding: 12px;
-border: 1px solid #E9C98755;
-background-color: rgba(233, 201, 135, 0.1);
-color: #E9C987;
-border-radius: 5px;
-font-size: 1rem;
-}
-
-input:focus, textarea:focus, select:focus {
-outline: none;
-border-color: #E9C987;
-box-shadow: 0 0 5px rgba(233, 201, 135, 0.5);
-}
-
-@media screen and (max-width: 768px) {
-.hero h1 {
-font-size: 2.5rem;
-}
-
-.hero p {
-font-size: 1.2rem;
-}
-
-.about {
-grid-template-columns: 1fr;
-}
-
-.nav-links {
-display: none;
-}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Mystcal Werz</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Tangerine:wght@400;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #030E20;
+            background-image: url('night-sky-with-stars.jpg');
+            background-size: cover;
+            color: #E9C987;
+            font-family: 'Cinzel Decorative', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .tarot-container {
+            width: 1200px;
+            height: 800px;
+            position: relative;
+            padding: 60px;
+            box-sizing: border-box;
+        }
+
+        .ornamental-border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 40px solid transparent;
+            border-image: url('golden-ornamental-border.png') 100 stretch;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .moon {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 150px;
+            background-image: url('moon.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 1;
+            filter: drop-shadow(0 0 20px rgba(255, 255, 200, 0.7));
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            border-bottom: 1px solid #E9C98755;
+            position: relative;
+            z-index: 5;
+        }
+
+        .logo {
+            font-family: 'Tangerine', cursive;
+            font-size: 3rem;
+            color: #E9C987;
+            text-shadow: 0 0 10px rgba(233, 201, 135, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links li a {
+            color: #E9C987;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1rem;
+        }
+
+        .button {
+            background-color: #E9C987;
+            color: #030E20;
+            padding: 8px 20px;
+            border-radius: 5px;
+        }
+
+        .main-title {
+            font-family: 'Tangerine', cursive;
+            font-size: 5rem;
+            color: #E9C987;
+            text-align: center;
+            margin-top: 80px;
+            text-shadow: 0 0 15px rgba(233, 201, 135, 0.6);
+            position: relative;
+            z-index: 5;
+        }
+
+        .sub-title {
+            font-size: 1.5rem;
+            color: #E9C987CC;
+            text-align: center;
+            margin-top: 10px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .sub-text {
+            font-size: 1.2rem;
+            color: #E9C987AA;
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+            position: relative;
+            z-index: 5;
+        }
+
+        .queries-button {
+            display: block;
+            width: 150px;
+            margin: 30px auto;
+            text-align: center;
+            background-color: #E9C987;
+            color: #030E20;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+            z-index: 5;
+        }
+
+        .book-container {
+            position: relative;
+            width: 600px;
+            height: 300px;
+            margin: 60px auto;
+            z-index: 2;
+        }
+
+        .book {
+            width: 100%;
+            height: 100%;
+            background-image: url('open-book.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .candle-left, .candle-right {
+            position: absolute;
+            width: 80px;
+            height: 200px;
+            background-image: url('red-candle.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom;
+        }
+
+        .candle-left {
+            left: -50px;
+            bottom: 0;
+        }
+
+        .candle-right {
+            right: -50px;
+            bottom: 0;
+        }
+
+        .candle-flame {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 40px;
+            background-image: url('flame.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            filter: drop-shadow(0 0 10px rgba(255, 200, 100, 0.8));
+            animation: flicker 1.5s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; transform: translateX(-50%) scale(1); }
+            50% { opacity: 0.8; transform: translateX(-50%) scale(0.95); }
+        }
+
+        .services {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            margin-top: 30px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .service-section {
+            width: 30%;
+            text-align: center;
+        }
+
+        .service-title {
+            font-family: 'Tangerine', cursive;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .service-text {
+            font-size: 0.9rem;
+            color: #E9C987CC;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+            z-index: 5;
+        }
+
+        .divider-title {
+            font-family: 'Tangerine', cursive;
+            font-size: 3rem;
+        }
+
+        .guarantees {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .guarantee-box {
+            width: 30%;
+            background-color: rgba(3, 14, 32, 0.8);
+            border: 1px solid #E9C98755;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .guarantee-title {
+            font-family: 'Tangerine', cursive;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .guarantee-text {
+            font-size: 0.9rem;
+            color: #E9C987CC;
+            text-align: left;
+        }
+
+        .bullet-list {
+            text-align: left;
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .bullet-list li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .bullet-list li::before {
+            content: "•";
+            position: absolute;
+            left: -15px;
+            color: #E9C987;
+        }
+
+        .order-button {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: transparent;
+            border: 2px solid #E9C987;
+            color: #E9C987;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .candle-center {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-<header>
-<div class="container">
-<nav>
-<a href="#" class="logo">Містична Таро</a>
-<ul class="nav-links">
-<li><a href="#services">Послуги</a></li>
-<li><a href="#testimonials">Відгуки</a></li>
-<li><a href="#about">Про мене</a></li>
-<li><a href="#" class="btn" onclick="openModal()">Замовити</a></li>
-</ul>
-</nav>
-</div>
-</header>
-
-<section class="hero">
-<div class="container">
-<h1>Відкрийте таємниці своєї долі</h1>
-<p>Професійні консультації таролога допоможуть знайти відповіді на важливі життєві питання та розкрити потенціал вашого майбутнього</p>
-<a href="#" class="btn btn-large" onclick="openModal()">Замовити консультацію</a>
-</div>
-<!-- Можна видалити ці орнаменти або замінити їх на фрагменти з вашого зображення -->
-<div class="ornament ornament-1">
-<!-- Тут можна використати фрагмент вашого зображення як орнамент -->
-</div>
-<div class="ornament ornament-2">
-<!-- Тут можна використати фрагмент вашого зображення як орнамент -->
-</div>
-</section>
-
-<section class="services" id="services">
-<div class="container">
-<h2 class="section-title">Мої послуги</h2>
-<div class="services-grid">
-<div class="service-card">
-<h3>Особисте читання</h3>
-<p>Глибинний аналіз вашої життєвої ситуації, розкриття прихованих аспектів та потенційних шляхів розвитку подій.</p>
-<a href="#" class="btn" onclick="openModal()">Замовити</a>
-</div>
-<div class="service-card">
-<h3>Любовний прогноз</h3>
-<p>Детальний аналіз стосунків, сумісності та перспектив розвитку особистого життя. Відповіді на ваші найпотаємніші питання.</p>
-<a href="#" class="btn" onclick="openModal()">Замовити</a>
-</div>
-<div class="service-card">
-<h3>Кар'єрний прогноз</h3>
-<p>Розкриття професійного потенціалу, найкращих напрямків розвитку та майбутніх можливостей у кар'єрі та бізнесі.</p>
-<a href="#" class="btn" onclick="openModal()">Замовити</a>
-</div>
-</div>
-</div>
-</section>
-
-<section class="testimonials" id="testimonials">
-<div class="container">
-<h2 class="section-title">Відгуки клієнтів</h2>
-<div class="testimonial-grid">
-<div class="testimonial-card">
-<p class="testimonial-text">Консультація вразила своєю точністю! Отримала відповіді на всі свої питання та чіткий план дій. Через місяць все почало збуватися саме так, як було передбачено.</p>
-<p class="testimonial-author">- Олена Р.</p>
-</div>
-<div class="testimonial-card">
-<p class="testimonial-text">Завдяки рекомендаціям таролога змогла розібратися у складній ситуації з роботою. Прийняла правильне рішення і зараз дуже щаслива з новою посадою.</p>
-<p class="testimonial-author">- Марія К.</p>
-</div>
-<div class="testimonial-card">
-<p class="testimonial-text">Спочатку був скептично налаштований, але після консультації змінив думку. Прогнози були надзвичайно точними, а поради дійсно допомогли змінити ситуацію на краще.</p>
-<p class="testimonial-author">- Андрій В.</p>
-</div>
-</div>
-</div>
-</section>
-
-<section class="about" id="about">
-<div class="about-img">
-<!-- Тут можна використати фрагмент вашого зображення або фото таролога -->
-<img src="path/to/tarot-master.jpg" alt="Таролог">
-</div>
-<div class="about-content">
-<h2>Про мене</h2>
-<p>Я професійний таролог з більш ніж 10-річним досвідом роботи. Моя місія — допомагати людям знаходити відповіді на складні життєві питання та розкривати свій потенціал.</p>
-<p>У своїй практиці я поєднує глибокі знання символіки Таро, інтуїтивні здібності та психологічний підхід, що дозволяє надавати точні та корисні рекомендації.</p>
-<p>Кожна консультація — це індивідуальний підхід, конфіденційність та щире бажання допомогти вам знайти найкраще рішення.</p>
-<a href="#" class="btn" onclick="openModal()">Замовити консультацію</a>
-</div>
-</section>
-
-<section class="features">
-<div class="container">
-<h2 class="section-title">Чому обирають мене</h2>
-<div class="features-grid">
-<div class="feature-card">
-<div class="feature-icon">✨</div>
-<h3>Точність</h3>
-<p>Високий рівень точності прогнозів, підтверджений сотнями задоволених клієнтів</p>
-</div>
-<div class="feature-card">
-<div class="feature-icon">🔒</div>
-<h3>Конфіденційність</h3>
-<p>Гарантована повна конфіденційність вашої особистої інформації та змісту консультацій</p>
-</div>
-<div class="feature-card">
-<div class="feature-icon">💼</div>
-<h3>Професіоналізм</h3>
-<p>Більше 10 років практики та постійне вдосконалення навичок читання Таро</p>
-</div>
-<div class="feature-card">
-<div class="feature-icon">❤️</div>
-<h3>Емпатія</h3>
-<p>Чуйний підхід до кожного клієнта та його унікальної життєвої ситуації</p>
-</div>
-</div>
-</div>
-</section>
-
-<section class="cta">
-<div class="container">
-<h2>Готові розкрити таємниці своєї долі?</h2>
-<p>Замовте консультацію зараз та отримайте спеціальну знижку 20% на перше читання! Кількість місць обмежена.</p>
-<a href="#" class="btn btn-large" onclick="openModal()">Замовити консультацію</a>
-</div>
-</section>
-
-<footer>
-<div class="container">
-<div class="footer-content">
-<div class="footer-column">
-<h3>Містична Таро</h3>
-<p>Професійні консультації, які змінюють життя на краще.</p>
-</div>
-<div class="footer-column">
-<h3>Послуги</h3>
-<ul>
-<li><a href="#">Особисте читання</a></li>
-<li><a href="#">Любовний прогноз</a></li>
-<li><a href="#">Кар'єрний прогноз</a></li>
-<li><a href="#">Річний розклад</a></li>
-</ul>
-</div>
-<div class="footer-column">
-<h3>Контакти</h3>
-<ul>
-<li><a href="tel:+380991234567">+38 (099) 123-45-67</a></li>
-<li><a href="mailto:info@misticaltarot.ua">info@misticaltarot.ua</a></li>
-<li><a href="#">Telegram</a></li>
-<li><a href="#">Instagram</a></li>
-</ul>
-</div>
-</div>
-<div class="copyright">
-<p>© 2025 Містична Таро. Всі права захищено.</p>
-</div>
-</div>
-</footer>
-
-<div class="modal" id="orderModal">
-<div class="modal-content">
-<span class="close-modal" onclick="closeModal()">&times;</span>
-<h2 class="section-title">Замовити консультацію</h2>
-<form id="orderForm">
-<div class="form-group">
-<label for="name">Ваше ім'я</label>
-<input type="text" id="name" name="name" required>
-</div>
-<div class="form-group">
-<label for="phone">Телефон</label>
-<input type="tel" id="phone" name="phone" required>
-</div>
-<div class="form-group">
-<label for="email">E-mail</label>
-<input type="email" id="email" name="email" required>
-</div>
-<div class="form-group">
-<label for="service">Тип консультації</label>
-<select id="service" name="service" required>
-<option value="">Оберіть тип консультації</option>
-<option value="personal">Особисте читання</option>
-<option value="love">Любовний прогноз</option>
-<option value="career">Кар'єрний прогноз</option>
-<option value="yearly">Річний розклад</option>
-</select>
-</div>
-<div class="form-group">
-<label for="message">Ваше питання (необов'язково)</label>
-<textarea id="message" name="message" rows="4"></textarea>
-</div>
-<button type="submit" class="btn btn-large">Замовити зараз</button>
-</form>
-</div>
-</div>
-
-<script>
-function openModal() {
-document.getElementById('orderModal').style.display = 'flex';
-}
-
-function closeModal() {
-document.getElementById('orderModal').style.display = 'none';
-}
-
-document.getElementById('orderForm').addEventListener('submit', function(e) {
-e.preventDefault();
-alert('Дякуємо за замовлення! Ми зв\'яжемося з вами найближчим часом.');
-closeModal();
-});
-
-window.onclick = function(event) {
-const modal = document.getElementById('orderModal');
-if (event.target == modal) {
-closeModal();
-}
-}
-</script>
+    <div class="tarot-container">
+        <div class="ornamental-border"></div>
+        <div class="moon"></div>
+        
+        <header>
+            <div class="logo">Tarot</div>
+            <ul class="nav-links">
+                <li><a href="#">POST</a></li>
+                <li><a href="#">Ø OBSS</a></li>
+                <li><a href="#">SERVICE</a></li>
+                <li><a href="#">FICTING</a></li>
+                <li><a href="#" class="button">Reaģanond</a></li>
+            </ul>
+        </header>
+        
+        <h1 class="main-title">Tarot Mystcal Werz.</h1>
+        <p class="sub-title">Enghts with cauch nak clse trendingë.</p>
+        <p class="sub-text">Later the setur pefelit eant yoʊ ire voor to brviead opproless and euse panceles neenries.</p>
+        <a href="#" class="queries-button">Quieries</a>
+        
+        <div class="book-container">
+            <div class="book"></div>
+            <div class="candle-left">
+                <div class="candle-flame"></div>
+            </div>
+            <div class="candle-right">
+                <div class="candle-flame"></div>
+            </div>
+        </div>
+        
+        <div class="services">
+            <div class="service-section">
+                <h3 class="service-title">Anton cAteats</h3>
+                <p class="service-text">Coettisungt uit vehlcorte mgt all intouf detatpirad mamy hoaftatien fieen fitraça Me ecafitarct ewing ereocwit a bocter ank indficate ues prevviriese.</p>
+            </div>
+            <div class="service-section">
+                <h3 class="service-title">Exabence bolling</h3>
+                <p class="service-text">Ogerie scierce cuntfiremaissut any affe unate frect ecspa huäas dæe il treifilng maior foldet and firct coute cand the crpiments føy es lex-vir livs smila.</p>
+            </div>
+            <div class="service-section">
+                <h3 class="service-title">Bable senaire holing</h3>
+                <p class="service-text">Estind äogs fiovsrd eigomt låte fikseta filiar nopiöe tile heffæt formighseites ef convtont and ley ses æ domter mires end and emfebal ef dicalemy cafess.</p>
+            </div>
+        </div>
+        
+        <div class="divider">
+            <h2 class="divider-title">Putter nae ômpy.</h2>
+        </div>
+        
+        <div class="guarantees">
+            <div class="guarantee-box">
+                <h3 class="guarantee-title">Ealon</h3>
+                <p class="guarantee-text">Tedaniy untulte esote maior thec rens.</p>
+                <p class="guarantee-text">Our en fisty coftee lin gumenetaries reyx ertl camting belting epuniver identa th heł łoey sfieæse in œscino iewenblyshien ebaning thts emfteous egmiftonie.</p>
+                <ul class="bullet-list">
+                    <li>Manltir eterra fftality</li>
+                    <li>Phafle häfa centity</li>
+                    <li>Anishted lifle</li>
+                </ul>
+                <a href="#" class="order-button">ORDET FTRES</a>
+            </div>
+            <div class="guarantee-box">
+                <img src="candle.png" alt="Свічка" class="candle-center">
+                <h3 class="guarantee-title">Livens</h3>
+                <p class="guarantee-text">Hatio Jaye</p>
+            </div>
+            <div class="guarantee-box">
+                <h3 class="guarantee-title">Guarantees</h3>
+                <p class="guarantee-text">"Tow' e lile експертіp, erinmes iris male harmigt lin than of fore and witil es are for exanita ch-oexige сald foping epitinad konher laeis lile and ltrnnr the morflty egt eølgrinatign lovl the eventwnmes.</p>
+                <p class="guarantee-text">The pniss grstone and ambeinis of line larjate netloads fæilset reed elpea you ovredoje naedinles Iiasvoiøl fuims entotce lost bred ofi-metne ffiernle rituç e.ein efteg Letvec entot of lie Inverergrinte l-ætta lv consi erald in lie theomy lewes yeu.</p>
+                <p class="guarantee-text">Rent Jaye</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
